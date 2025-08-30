@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-console.log(plantsArray)
 export const CartSlice = createSlice({
   name: 'cart',
   initialState: {
@@ -26,7 +24,7 @@ export const CartSlice = createSlice({
     },
     updateQuantity: (state, action) => {
        const { name, quantity } = action.payload
-       const itemToUpdate = state.items.find(item => name === name)
+       const itemToUpdate = state.items.find(item => item.name === name)
        if (itemToUpdate) {
         itemToUpdate.quantity = quantity
        }
@@ -37,3 +35,5 @@ export const CartSlice = createSlice({
 export const { addItem, removeItem, updateQuantity } = CartSlice.actions;
 
 export default CartSlice.reducer;
+
+;
